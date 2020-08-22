@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="style.css" rel="stylesheet" />
-    <title>Home page</title>
+    <title><%= title %></title>
   </head>
   <body>
     <header>
@@ -22,6 +22,15 @@
         <textarea name="chitter" id="new-chitter"></textarea>
         <button>POST</button>
       </div>
+
+      <div>
+          <% chitters.forEach((chitter)=> { %>
+                <h3><%= chitter.chitter %></h3>
+                <p><%= chitter.username %></p>
+                <p><%= chitter.comments.length %> comments </p>
+          <% })%>
+      </div>
+
     </main>
   </body>
 </html>
